@@ -4,33 +4,30 @@ import { media } from "./utils";
 const typography = css`
   :root {
     /* https://www.reliablepsd.com/ultimate-google-font-pairings/ */
-    --font-primary: ${props => props.theme.fonts.primary};
-    --font-secondary: ${props => props.theme.fonts.secondary};
+    --font-primary: ${props => props.theme.fonts.primary || "sans-serif"};
+    --font-secondary: ${props => props.theme.fonts.secondary || "serif"};
     /* set base values ​​*/
     --text-base-size: 1em;
     --text-scale-ratio: 1.2;
 
     /* type scale */
-    --text-xs: calc (1em / (var (-text-scale-ratio) * var (-text-scale-ratio)));
-    --text-sm: calc (1em / var (-text-scale-ratio));
-    --text-md: calc (1em * var (-text-scale-ratio));
-    --text-lg: calc (1em * var (-text-scale-ratio) * var (-text-scale-ratio));
-    --text-xl: calc
-      (
-        1em * var (-text-scale-ratio) * var (-text-scale-ratio) * var
-          (-text-scale-ratio)
-      );
-    --text-xxl: calc
-      (
-        1em * var (-text-scale-ratio) * var (-text-scale-ratio) * var
-          (-text-scale-ratio) * var (-text-scale -ratio)
-      );
-    --text-xxxl: calc
-      (
-        1em * var (-text-scale-ratio) * var (-text-scale-ratio) * var
-          (-text-scale-ratio) * var (-text-scale -ratio) * var
-          (-text-scale-ratio)
-      );
+    --text-xs: calc(1em / (var(--text-scale-ratio) * var(--text-scale-ratio)));
+    --text-sm: calc(1em / var(--text-scale-ratio));
+    --text-md: calc(1em * var(--text-scale-ratio));
+    --text-lg: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio));
+    --text-xl: calc(
+      1em * var(--text-scale-ratio) * var(--text-scale-ratio) *
+        var(--text-scale-ratio)
+    );
+    --text-xxl: calc(
+      1em * var(--text-scale-ratio) * var(--text-scale-ratio) *
+        var(--text-scale-ratio) * var(--text-scale-ratio)
+    );
+    --text-xxxl: calc(
+      1em * var(--text-scale-ratio) * var(--text-scale-ratio) *
+        var(--text-scale-ratio) * var(--text-scale-ratio) *
+        var(--text-scale-ratio)
+    );
     /* line-height */
     --heading-line-height: 1.2;
     --body-line-height: 1.4;
@@ -43,6 +40,8 @@ const typography = css`
     font-size: var(--text-base-size);
     font-family: var(--font-primary);
     color: var(--color-text);
+    /* optional transition  */
+    transition: font-size 0.2s;
   }
 
   h1,
