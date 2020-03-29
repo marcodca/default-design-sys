@@ -41,7 +41,7 @@ const typography = css`
     font-family: var(--font-primary);
     color: var(--color-text);
     /* optional transition  */
-    transition: font-size 0.2s;
+    transition: font-size 0.2s, background-color 0.6s;
   }
 
   h1,
